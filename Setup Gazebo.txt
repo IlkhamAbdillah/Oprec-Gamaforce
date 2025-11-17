@@ -1,0 +1,77 @@
+~/ardupilot
+~/ardupilot_gazebo
+~/catkin_ws
+	/build
+	/devel
+	/logs
+	/src
+		/mavlink
+		/mavros
+		/iq_sim
+		/realsense_gazebo_plugin
+
+
+IQ_SIM
+
+cd ~/catkin_ws/src
+
+git clone https://github.com/Intelligent-Quads/iq_sim.git
+
+cd ..
+
+catkin build
+
+echo "GAZEBO_MODEL_PATH=:~/catkin_ws/src/iq_sim/models" >> ~/.bashrc
+
+source ~/.bashrc
+
+
+ARDUPILOT
+
+cd ~
+
+git clone https://github.com/Ardupilot/ardupilot.git
+
+cd ardupilot
+
+Tools/environment_install/install-prereqs-ubuntu.sh -y
+
+. ~/.profile
+
+git checkout Copter-4.0.4
+
+git config --global url.https:// insteadOf git://
+
+git submodule update --init --recursive
+
+cd ~/ardupilot
+
+sim_vehicle.py -w
+
+
+ARDUPILOT GAZEBO
+
+cd ~
+
+git clone https://github.com/khancyr/ardupilot_gazebo.git
+
+echo "export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models" >> ~/.bashrc
+
+source ~/.bashrc
+
+
+REALSENSE GAZEBO PLUGIN
+
+cd ~/catkin_ws/src
+
+git clone https://github.com/pal-robotics/realsense_gazebo_plugin.git
+
+git checkout melodic-devel
+
+cd ..
+
+catkin build
+
+echo "export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/catkin_ws/devel/lib" >> ~/.bashrc
+
+source ~/.bashrc

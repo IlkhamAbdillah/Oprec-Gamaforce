@@ -1,0 +1,17 @@
+cd ~
+
+git clone https://github.com/IlkhamAbdillah/Oprec-Gamaforce.git
+
+cd Oprec-Gamaforce
+
+rm ~/catkin_ws/src/iq_sim/launch/apm.launch
+
+mv apm.launch ~/catkin_ws/src/iq_sim/launch
+
+mv tesoprec.world ~/catkin_ws/src/iq_sim/worlds
+
+roslaunch iq_sim apm.launch
+
+CTRL + ALT + T (Buat terminal baru)
+
+sim_vehicle.py -v Arducopter -f gazebo-iris --console
