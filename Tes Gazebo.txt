@@ -6,12 +6,20 @@ cd Oprec-Gamaforce
 
 rm ~/catkin_ws/src/iq_sim/launch/apm.launch
 
-mv apm.launch ~/catkin_ws/src/iq_sim/launch
+mv launch/apm.launch ~/catkin_ws/src/iq_sim/launch
 
-mv tesoprec.world ~/catkin_ws/src/iq_sim/worlds
+mv world/tesoprec.world ~/catkin_ws/src/iq_sim/worlds
+
+mv model/oprec_drone/ ~/ardupilot_gazebo/models
 
 roslaunch iq_sim apm.launch
 
 CTRL + ALT + T (Buat terminal baru)
 
 sim_vehicle.py -v Arducopter -f gazebo-iris --console
+
+CTRL + ALT + T (Buat terminal baru)
+
+cd ~/Oprec-Gamaforce/scripts
+
+python3 vision_depan.py

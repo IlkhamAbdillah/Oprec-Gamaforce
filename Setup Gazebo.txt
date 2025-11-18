@@ -8,7 +8,7 @@
 		/mavlink
 		/mavros
 		/iq_sim
-		/realsense_gazebo_plugin
+		/realsense_ros_gazebo
 
 
 IQ_SIM
@@ -40,7 +40,7 @@ Tools/environment_install/install-prereqs-ubuntu.sh -y
 
 git checkout Copter-4.0.4
 
-git config --global url.https:// insteadOf git://
+git config --global url.https://.insteadOf git://
 
 git submodule update --init --recursive
 
@@ -60,13 +60,11 @@ echo "export GAZEBO_MODEL_PATH=~/ardupilot_gazebo/models" >> ~/.bashrc
 source ~/.bashrc
 
 
-REALSENSE GAZEBO PLUGIN
+REALSENSE ROS GAZEBO
 
 cd ~/catkin_ws/src
 
-git clone https://github.com/pal-robotics/realsense_gazebo_plugin.git
-
-git checkout melodic-devel
+git clone https://github.com/nilseuropa/realsense_ros_gazebo.git
 
 cd ..
 
