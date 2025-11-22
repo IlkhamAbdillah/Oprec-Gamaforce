@@ -16,7 +16,7 @@ roslaunch iq_sim apm.launch
 
 CTRL + ALT + T (Buat terminal baru)
 
-sim_vehicle.py -v Arducopter -f gazebo-iris --console
+sim_vehicle.py -v ArduCopter -f gazebo-iris --console
 
 CTRL + ALT + T (Buat terminal baru)
 
