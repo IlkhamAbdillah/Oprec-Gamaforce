@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="dartboard">
+    <static>true</static>
+    <link name="dartboard_link">
+
+      <!-- VISUAL -->
+      <visual name="dartboard_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dart_mesh/meshes/dartboard.dae</uri>
+            <scale>0.3 0.3 0.05</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- COLLISION (gunakan silinder tipis) -->
+      <collision name="dartboard_collision">
+        <geometry>
+          <cylinder>
+            <radius>1.5</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>

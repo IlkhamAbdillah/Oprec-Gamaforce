@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="ring">
+    <static>true</static>
+
+    <link name="link">
+
+      <!-- VISUAL -->
+      <visual name="ring_visual">
+        <geometry>
+          <mesh>
+            <uri>model://ring/meshes/ring.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <!-- COLLISION -->
+      <collision name="ring_collision">
+        <geometry>
+          <mesh>
+            <uri>model://ring/meshes/ring.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
